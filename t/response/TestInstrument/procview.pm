@@ -1,4 +1,4 @@
-package TestInstrument::memory;
+package TestInstrument::procview;
 
 use strict;
 use warnings FATAL => 'all';
@@ -7,18 +7,17 @@ use Apache::Test qw(-withtestmore);
 
 use Apache2::Const -compile => 'OK';
 
-my $leak;
 sub handler : method {
     my ($class, $r) = @_;
-
+    
     plan $r, tests => 1;
     
-    foreach my $i (1..100) {
-        my $iter = $i * 100;
-        my $foo = "xx"x$iter;
+    opendir(my $d, "/tmp");
+
+    while(my $f = readdir($d)) {
+        my @s = stat $f;
+        open (my $h, "<", "/tmp/$f");
     }
-    
-    $leak .= "xx"x100_100;
     
     ok(1);
     
@@ -27,5 +26,4 @@ sub handler : method {
 
 1;
 __END__
-#PerlInstrument time
-PerlInitHandler Apache2::Instrument::Memory
+PerlInitHandler Apache2::Instrument::Strace

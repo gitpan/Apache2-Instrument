@@ -1,7 +1,7 @@
-# don't worry about this file - you should not
-# need to edit it at all.
+#!/usr/bin/perl
 
-use 5.008;
+use strict;
+use warnings;
 
 use ModPerl::MM ();
 use Apache::TestMM qw(test clean);
@@ -12,11 +12,10 @@ Apache::TestMM::filter_args();
 Apache::TestRunPerl->generate_script();
 
 ModPerl::MM::WriteMakefile(
-  NAME      => 'Apache2::Instrument',
-  VERSION_FROM => 'lib/Apache2/Instrument.pm',
-  SIGN => 1,
-  PREREQ_PM => {
-    'mod_perl'   => '2',
-    'Test::More' => '0.47',
-  },
+    NAME         => 'Apache2::Instrument',
+    VERSION_FROM => 'lib/Apache2/Instrument.pm',
+    PREREQ_PM    => {
+        'mod_perl'   => '2',
+        'Test::More' => '0.47',
+    },
 );
