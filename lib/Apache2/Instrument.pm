@@ -38,7 +38,7 @@ See the source code for details.
 
 Phillipe M. Chiasson L<gozer@apache.org>
 
-Version 0.02 released by Fred Moyer L<fred@redhotpenguin.com>
+Version 0.03 released by Fred Moyer L<fred@redhotpenguin.com>
 
 Nick Townsend (github.com/townsen) contributed Procview (https://github.com/townsen/procview)
 
@@ -51,7 +51,7 @@ modify it under the same terms as Perl itself. See L<perlartistic>.
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Apache2::Const -compile => qw(OK);
 use Apache2::RequestUtil ();

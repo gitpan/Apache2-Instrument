@@ -15,7 +15,7 @@ ModPerl::MM::WriteMakefile(
     NAME         => 'Apache2::Instrument',
     VERSION_FROM => 'lib/Apache2/Instrument.pm',
     PREREQ_PM    => {
-        'mod_perl'   => '2',
+        'mod_perl2'  => '2',
         'Test::More' => '0.47',
     },
 );
